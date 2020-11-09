@@ -9,13 +9,15 @@ export default function Pokemon(props) {
   useEffect(() => {
     const getData = async () => {
       const firstRes = await axios.get(props.url);
+      const secondRes = await axios.get(firstRes.data.species.url);
+      //   console.log(secondRes);
       setPokemon(firstRes.data);
       setLoading(false);
     };
     getData();
   }, []);
 
-  console.log(pokemon);
+  //   console.log(pokemon);
 
   if (loading) {
     return (
@@ -29,9 +31,13 @@ export default function Pokemon(props) {
       <div className="Pokemon-main">
         <img src={pokemon.sprites.front_default} alt="" />
         <h2>{pokemon.name}</h2>
-        <p>Pokemon Species</p>
-        <p>Pokemon Types</p>
-        <p>more info</p>
+        {/* <p>Pokemon Species</p> */}
+        {pokemon.types.map((type) => (
+          <li>{type.type.name}</li>
+        ))}
+        {pokemon.abilities.map((ability) => (
+          <li>{ability.ability.name}</li>
+        ))}
       </div>
     </div>
   );

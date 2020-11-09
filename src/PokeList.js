@@ -12,16 +12,10 @@ function PokeList(props) {
   useEffect(() => {
     const getData = async () => {
       const firstRes = await axios.get("https://pokeapi.co/api/v2/pokemon/");
-      const secondRes = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon-species/2/`
-      );
-      console.log(secondRes);
       setPokemons(firstRes.data.results);
     };
     getData();
   }, []);
-
-  //   console.log(pokemons);
 
   return (
     <div>
