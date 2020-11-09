@@ -45,3 +45,10 @@
   font-size: 14px;
   margin-top: -10px;
 }
+
+.Pokemon-stats {
+  margin-top: 20px;
+  background-color: white;
+  /* padding: 100px; */
+  width: 80%;
+}

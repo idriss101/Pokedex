@@ -1,5 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import LinearProgress from "@material-ui/core/LinearProgress";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { Line, Circle } from "rc-progress";
 import "./Pokemon.css";
 
 export default function Pokemon(props) {
@@ -41,6 +44,53 @@ export default function Pokemon(props) {
             <li>{ability.ability.name}</li>
           ))}
         </ul>
+      </div>
+
+      <div className="Pokemon-stats">
+        <table>
+          <tr>
+            <td>Hp</td>
+            <td>45</td>
+            <td style={{ width: "100%" }}>
+              <LinearProgress variant="static" value={50} />
+            </td>
+          </tr>
+          <tr>
+            <td>Attack</td>
+            <td>45</td>
+            <td style={{ width: "100%" }}>
+              <LinearProgress variant="static" value={50} />
+            </td>
+          </tr>
+          <tr>
+            <td>Defense</td>
+            <td>45</td>
+            <td style={{ width: "100%" }}>
+              <LinearProgress variant="static" value={50} />
+            </td>
+          </tr>
+          <tr>
+            <td>Sp Attack</td>
+            <td>45</td>
+            <td style={{ width: "100%" }}>
+              <LinearProgress variant="static" value={50} />
+            </td>
+          </tr>
+          <tr>
+            <td>Sp Defense</td>
+            <td>45</td>
+            <td style={{ width: "100%" }}>
+              <LinearProgress variant="static" value={50} />
+            </td>
+          </tr>
+          <tr>
+            <td>Hp</td>
+            <td>45</td>
+            <td style={{ width: "100%" }}>
+              <LinearProgress variant="static" value={50} />
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   );
