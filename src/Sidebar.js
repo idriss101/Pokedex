@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./SideBar.css";
-import clsx from "clsx";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
@@ -13,13 +11,8 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import App from "./App";
 import Button from "@material-ui/core/Button";
 
 const drawerWidth = 240;
@@ -49,6 +42,11 @@ function Sidebar(props) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleClick = (e) => {
+    props.getNewPokemon(e.target.textContent);
+    setOpen(false);
+  };
   return (
     <div className="SideBar">
       <AppBar position="sticky" color="secondary">
@@ -65,10 +63,15 @@ function Sidebar(props) {
         <IconButton onClick={handleClose}>
           <ChevronLeftIcon />
         </IconButton>
+        <Divider />
         <List>
           {pokemonTypes.map((type) => (
             <ListItem key={type.name}>
-              <Button variant="outlined" className={props.classes.btns}>
+              <Button
+                variant="outlined"
+                className={props.classes.btns}
+                onClick={handleClick}
+              >
                 <ListItemText>{type.name}</ListItemText>
               </Button>
             </ListItem>

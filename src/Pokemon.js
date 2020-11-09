@@ -31,13 +31,16 @@ export default function Pokemon(props) {
       <div className="Pokemon-main">
         <img src={pokemon.sprites.front_default} alt="" />
         <h2>{pokemon.name}</h2>
-        {/* <p>Pokemon Species</p> */}
-        {pokemon.types.map((type) => (
-          <li>{type.type.name}</li>
-        ))}
-        {pokemon.abilities.map((ability) => (
-          <li>{ability.ability.name}</li>
-        ))}
+        <ul className="Pokemon-main--types">
+          {pokemon.types.map((type) => (
+            <li>{type.type.name}</li>
+          ))}
+        </ul>
+        <ul>
+          {pokemon.abilities.map((ability) => (
+            <li>{ability.ability.name}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

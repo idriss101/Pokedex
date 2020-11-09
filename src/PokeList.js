@@ -7,19 +7,9 @@ const styles = (theme) => ({
   toolbar: theme.mixins.toolbar,
 });
 function PokeList(props) {
-  const [pokemons, setPokemons] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      const firstRes = await axios.get("https://pokeapi.co/api/v2/pokemon/");
-      setPokemons(firstRes.data.results);
-    };
-    getData();
-  }, []);
-
   return (
     <div>
-      {pokemons.map((pokemon) => (
+      {props.pokemons.map((pokemon) => (
         <Pokemon {...pokemon} key={pokemon.name} />
       ))}
     </div>
