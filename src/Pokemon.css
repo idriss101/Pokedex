@@ -48,7 +48,11 @@
 
 .Pokemon-stats {
   margin-top: 20px;
-  background-color: white;
+  /* background-color: white; */
   /* padding: 100px; */
   width: 80%;
+}
+
+.Pokemon-stats td {
+  text-transform: capitalize;
 }

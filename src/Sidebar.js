@@ -21,6 +21,9 @@ const styles = () => ({
   btns: {
     width: "100%",
   },
+  appBar: {
+    backgroundColor: "#CC0000",
+  },
 });
 
 function Sidebar(props) {
@@ -49,7 +52,11 @@ function Sidebar(props) {
   };
   return (
     <div className="SideBar">
-      <AppBar position="sticky" color="secondary">
+      <AppBar
+        position="sticky"
+        color="secondary"
+        className={props.classes.appBar}
+      >
         <Toolbar>
           <IconButton onClick={handleOpen} color="inherit">
             <MenuIcon />
