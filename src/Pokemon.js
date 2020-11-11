@@ -3,14 +3,15 @@ import React, { useState, useEffect } from "react";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { withStyles } from "@material-ui/core/styles";
 import "./Pokemon.css";
+import ProgressBar from "./ProgressBar";
 
 const styles = () => ({
   progress: {
-    height: "10px",
+    height: "9px",
+    borderRadius: "10px",
+    backgroundColor: "#E9E8E7",
   },
-  title: {
-    color: "red",
-  },
+  barColorPrimary: {},
 });
 
 function Pokemon(props) {
@@ -32,6 +33,16 @@ function Pokemon(props) {
     return (value / 200) * 100;
   };
 
+  const statColors = (stat) => {
+    if (normalise(stat) <= 20) {
+      return `red`;
+    } else if (normalise(stat) <= 50) {
+      return "orange";
+    } else {
+      return "green";
+    }
+  };
+
   //   console.log(pokemon);
 
   if (loading) {
@@ -45,6 +56,10 @@ function Pokemon(props) {
     <div className="Pokemon">
       <div className="Pokemon-main">
         <img src={pokemon.sprites.front_default} alt="" />
+        <div className="Pokemon-id">
+          <p>#001</p>
+        </div>
+
         <h2>{pokemon.name}</h2>
         <ul className="Pokemon-main--types">
           {pokemon.types.map((type) => (
@@ -67,10 +82,10 @@ function Pokemon(props) {
                   <td>{stat.stat.name}</td>
                   <td>{stat.base_stat}</td>
                   <td style={{ width: "100%" }}>
-                    <LinearProgress
-                      color="secondary"
+                    <ProgressBar
                       value={normalise(stat.base_stat)}
-                      variant="determinate"
+                      statColors={statColors}
+                      baseStat={stat.base_stat}
                     />
                   </td>
                 </tr>

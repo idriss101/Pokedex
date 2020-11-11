@@ -12,12 +12,13 @@
 .Pokemon-main {
   background-color: white;
   width: 70%;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 10px;
   text-align: center;
   -webkit-box-shadow: -4px 11px 36px -4px rgba(0, 0, 0, 0.17);
   -moz-box-shadow: -4px 11px 36px -4px rgba(0, 0, 0, 0.17);
   box-shadow: -4px 11px 36px -4px rgba(0, 0, 0, 0.17);
+  position: relative;
 }
 .Pokemon-main h2 {
   text-transform: capitalize;
@@ -55,4 +56,10 @@
 
 .Pokemon-stats td {
   text-transform: capitalize;
+}
+
+.Pokemon-id {
+  position: absolute;
+  top: 50;
+  left: 50;
 }
