@@ -56,10 +56,7 @@ function Pokemon(props) {
     <div className="Pokemon">
       <div className="Pokemon-main">
         <img src={pokemon.sprites.front_default} alt="" />
-        <div className="Pokemon-id">
-          <p>#001</p>
-        </div>
-
+        <div className="Pokemon-id">{/* <p>#001</p> */}</div>
         <h2>{pokemon.name}</h2>
         <ul className="Pokemon-main--types">
           {pokemon.types.map((type) => (

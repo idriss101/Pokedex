@@ -19,6 +19,7 @@
   -moz-box-shadow: -4px 11px 36px -4px rgba(0, 0, 0, 0.17);
   box-shadow: -4px 11px 36px -4px rgba(0, 0, 0, 0.17);
   position: relative;
+  z-index: 5;
 }
 .Pokemon-main h2 {
   text-transform: capitalize;
@@ -40,6 +41,9 @@
   display: inline-block;
   margin-right: 10px;
 }
+.Pokemon-main img {
+  z-index: 10;
+}
 
 .Pokemon-main--types li {
   text-transform: uppercase;
@@ -60,6 +64,9 @@
 
 .Pokemon-id {
   position: absolute;
-  top: 50;
-  left: 50;
+  top: ;
+  right: 0;
+  font-size: 80px;
+  z-index: -1;
+  color: #6662664d;
 }
