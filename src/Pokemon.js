@@ -44,7 +44,7 @@ function Pokemon(props) {
     }
   };
 
-  console.log(pokemon);
+  // console.log(pokemon);
 
   if (loading) {
     return (
@@ -66,7 +66,7 @@ function Pokemon(props) {
         </ul>
         <ul>
           {pokemon.abilities.map((ability) => (
-            <li>{ability.ability.name}</li>
+            <li key={ability.name}>{ability.ability.name}</li>
           ))}
         </ul>
       </div>
@@ -93,7 +93,7 @@ function Pokemon(props) {
         </table>
       </div>
       <div className="Pokemon-more-info">
-        <MoreInfo />
+        <MoreInfo pokemon={pokemon} />
       </div>
     </div>
   );
