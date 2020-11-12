@@ -4,6 +4,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import { withStyles } from "@material-ui/core/styles";
 import "./Pokemon.css";
 import ProgressBar from "./ProgressBar";
+import MoreInfo from "./MoreInfo";
 
 const styles = () => ({
   progress: {
@@ -43,7 +44,7 @@ function Pokemon(props) {
     }
   };
 
-  //   console.log(pokemon);
+  console.log(pokemon);
 
   if (loading) {
     return (
@@ -90,6 +91,9 @@ function Pokemon(props) {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="Pokemon-more-info">
+        <MoreInfo />
       </div>
     </div>
   );
