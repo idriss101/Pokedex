@@ -17,6 +17,11 @@ function PokeList(props) {
         next={props.typeQuery ? props.getNewTypePokemon : props.getMorePokemon}
         hasMore={true}
         loader={<h4>Loading...</h4>}
+        endMessage={
+          <p style={{ textAlign: "center" }}>
+            <b>Yay! You have seen it all</b>
+          </p>
+        }
       >
         {props.pokemons.map((pokemon) => (
           <Pokemon {...pokemon} key={pokemon.name} />

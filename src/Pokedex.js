@@ -34,15 +34,17 @@ export default function Pokedex() {
   };
 
   const getNewTypePokemon = async () => {
-    const firstRes = await axios.get(
-      `https://pokeapi.co/api/v2/type/${type}/?offset=${
-        pageIndex + 10
-      }&limit=10`
-    );
     setPageIndex((prev) => {
       return prev + 10;
     });
-    const newPokemon = firstRes.data.pokemon.slice(pageIndex, pageIndex + 10);
+    const firstRes = await axios.get(
+      `https://pokeapi.co/api/v2/type/${type}/?offset=${pageIndex}&limit=10`
+    );
+
+    const newPokemon = firstRes.data.pokemon.slice(
+      pageIndex + 10,
+      pageIndex + 20
+    );
     const pokemons = [];
     newPokemon.forEach((pokemon) => {
       const data = {
@@ -79,7 +81,6 @@ export default function Pokedex() {
   return (
     <div>
       <SideBar getNewPokemon={getNewPokemon} />
-      <button onClick={getNewTypePokemon}>Click me</button>
       <PokeList
         pokemons={pokemons}
         getMorePokemon={getMorePokemon}
