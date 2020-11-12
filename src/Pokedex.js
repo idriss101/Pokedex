@@ -39,7 +39,10 @@ export default function Pokedex() {
         pageIndex + 10
       }&limit=10`
     );
-    const newPokemon = firstRes.data.pokemon;
+    setPageIndex((prev) => {
+      return prev + 10;
+    });
+    const newPokemon = firstRes.data.pokemon.slice(pageIndex, pageIndex + 10);
     const pokemons = [];
     newPokemon.forEach((pokemon) => {
       const data = {
@@ -61,7 +64,7 @@ export default function Pokedex() {
     const firstRes = await axios.get(
       `https://pokeapi.co/api/v2/type/${type}/?offset=${pageIndex}&limit=10`
     );
-    const newPokemon = firstRes.data.pokemon;
+    const newPokemon = firstRes.data.pokemon.slice(pageIndex, pageIndex + 10);
     const pokemons = [];
     newPokemon.forEach((pokemon) => {
       const data = {
@@ -71,10 +74,12 @@ export default function Pokedex() {
       pokemons.push(data);
     });
     setPokemons(pokemons);
+    console.log(pokemons);
   };
   return (
     <div>
       <SideBar getNewPokemon={getNewPokemon} />
+      <button onClick={getNewTypePokemon}>Click me</button>
       <PokeList
         pokemons={pokemons}
         getMorePokemon={getMorePokemon}
