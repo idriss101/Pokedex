@@ -30,12 +30,12 @@ export default function MoreInfo(props) {
     getData();
   }, []);
 
-  console.log(evolutions);
+  //   console.log(evolutions);
 
   //   console.log(props.pokemon);
   return (
     <div className="MoreInfo">
-      <div className="evolution">
+      {/* <div className="evolution">
         <div className="evolution-pokemon">
           <img src={props.pokemon.sprites.front_default} alt=" " />
           <p id="pokemon-id">#00{props.pokemon.id}</p>
@@ -58,16 +58,14 @@ export default function MoreInfo(props) {
             ))}
           </div>
         ))}
-      </div>
+      </div> */}
       <div className="moves-list">
         <h3>Moves list</h3>
         <div className="move-wrap">
           <ul>
             {props.pokemon.moves.slice(0, 50).map((move) => (
-              <li>
-                <div className="move" key={move.move.name}>
-                  {move.move.name}
-                </div>
+              <li key={move.move.name}>
+                <div className="move">{move.move.name}</div>
               </li>
             ))}
           </ul>
