@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./MoreInfo.css";
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles/MoreInfoStyles";
 
-export default function MoreInfo(props) {
+function MoreInfo(props) {
   const [evolutions, setEvolutions] = useState([]);
 
   useEffect(() => {
@@ -33,8 +35,9 @@ export default function MoreInfo(props) {
   //   console.log(evolutions);
 
   //   console.log(props.pokemon);
+  const { classes } = props;
   return (
-    <div className="MoreInfo">
+    <div className={classes.MoreInfo}>
       {/* <div className="evolution">
         <div className="evolution-pokemon">
           <img src={props.pokemon.sprites.front_default} alt=" " />
@@ -59,13 +62,13 @@ export default function MoreInfo(props) {
           </div>
         ))}
       </div> */}
-      <div className="moves-list">
+      <div className={classes.MovesList}>
         <h3>Moves list</h3>
-        <div className="move-wrap">
+        <div className={classes.MoveWrap}>
           <ul>
             {props.pokemon.moves.slice(0, 50).map((move) => (
               <li key={move.move.name}>
-                <div className="move">{move.move.name}</div>
+                <div className={classes.Move}>{move.move.name}</div>
               </li>
             ))}
           </ul>
@@ -74,3 +77,5 @@ export default function MoreInfo(props) {
     </div>
   );
 }
+
+export default withStyles(styles)(MoreInfo);

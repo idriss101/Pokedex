@@ -1,4 +1,4 @@
-.Pokemon {
+/* .Pokemon {
   width: 100%;
   background-color: #f8f7f7;
   padding: 40px 0;
@@ -6,13 +6,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: 50px; */
+  margin-bottom: 50px;
 }
 .Pokemon:nth-child(2n + 0) {
   background-color: white;
-}
+} */
 
-.Pokemon-main {
+/* .Pokemon-main {
   background-color: white;
   width: 70%;
   border-radius: 20px;
@@ -23,14 +23,14 @@
   box-shadow: -4px 11px 36px -4px rgba(0, 0, 0, 0.17);
   position: relative;
   z-index: 5;
-}
-.Pokemon-main h2 {
+} */
+/* .Pokemon-main h2 {
   text-transform: capitalize;
   color: #666266;
   margin-top: -10px;
   font-weight: 500;
-}
-.Pokemon-main ul {
+} */
+/* .Pokemon-main ul {
   list-style: none;
   text-align: center;
   padding: 0;
@@ -39,33 +39,31 @@
   justify-content: center;
   text-transform: capitalize;
   font-size: 14px;
-}
-.Pokemon-main ul li {
+} */
+/* .Pokemon-main ul li {
   display: inline-block;
   margin-right: 10px;
-}
-.Pokemon-main img {
+} */
+/* .Pokemon-main img {
   z-index: 10;
-}
+} */
 
-.Pokemon-main--types li {
+/* .Pokemon-main--types li {
   text-transform: uppercase;
   font-size: 14px;
   margin-top: -10px;
-}
+} */
 
-.Pokemon-stats {
+/* .Pokemon-stats {
   margin-top: 20px;
-  /* background-color: white; */
-  /* padding: 100px; */
   width: 80%;
-}
+} */
 
-.Pokemon-stats td {
+/* .Pokemon-stats td {
   text-transform: capitalize;
-}
+} */
 
-.Pokemon-id {
+/* .Pokemon-id {
   position: absolute;
   top: 26%;
   left: 48%;
@@ -74,18 +72,18 @@
   z-index: -1;
   color: #6662662a;
   font-weight: 500;
-}
-.Pokemon-id p:before {
-}
+} */
+/* .Pokemon-id p:before {
+} */
 
-.Pokemon-more-info {
+/* .Pokemon-more-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.Pokemon-height {
+/* .Pokemon-height {
   height: 40px;
   width: 40px;
   padding: 8px;
@@ -126,7 +124,7 @@
   -webkit-box-shadow: 0px 17px 46px -3px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 0px 17px 46px -3px rgba(0, 0, 0, 0.14);
   box-shadow: 0px 17px 46px -3px rgba(0, 0, 0, 0.14);
-}
+} */
 
 .u-bounce {
   -webkit-animation: bounce 1000ms infinite;

@@ -6,16 +6,7 @@ import Button from "@material-ui/core/Button";
 import "./Pokemon.css";
 import ProgressBar from "./ProgressBar";
 import MoreInfo from "./MoreInfo";
-
-const styles = () => ({
-  progress: {
-    height: "9px",
-    borderRadius: "10px",
-    backgroundColor: "#E9E8E7",
-  },
-  barColorPrimary: {},
-  pokemonType: {},
-});
+import styles from "./styles/PokemonStyles";
 
 function Pokemon(props) {
   const [pokemon, setPokemon] = useState({});
@@ -25,8 +16,6 @@ function Pokemon(props) {
   useEffect(() => {
     const getData = async () => {
       const firstRes = await axios.get(props.url);
-      //   const secondRes = await axios.get(firstRes.data.species.url);
-      //   console.log(secondRes);
       setPokemon(firstRes.data);
       setLoading(false);
     };
@@ -129,32 +118,35 @@ function Pokemon(props) {
     return s;
   };
 
-  // console.log(pokemon);
-
   if (loading) {
     return <div className="o-pokeball c-loader u-bounce"></div>;
   }
+  const { classes } = props;
   return (
-    <div className="Pokemon">
-      <div className="Pokemon-main">
+    <div className={classes.Pokemon}>
+      <div className={classes.PokemonMain}>
         <img src={pokemon.sprites.front_default} alt="" />
-        <div className="Pokemon-id">
+        <div className={classes.PokemonId}>
           <p>#{pokemon.id.pad()}</p>
         </div>
-        <div className="Pokemon-height">
+        <div
+          className={`${classes.PokemonExtraStats} ${classes.PokemonHeight} `}
+        >
           <p>{insertDecimal(pokemon.height)}m</p>
         </div>
-        <div className="Pokemon-weight">
+        <div
+          className={`${classes.PokemonExtraStats} ${classes.PokemonWeight} `}
+        >
           <p>{insertDecimal(pokemon.weight)}kg</p>
         </div>
         <h2>{pokemon.name}</h2>
-        <ul className="Pokemon-main--types">
+        <ul className={classes.PokemonMainTypes}>
           {pokemon.types.map((type) => {
             const color = typeColors(type.type.name);
             return (
               <li
                 key={type.type.name}
-                className={props.classes.pokemonType}
+                className={classes.pokemonType}
                 style={{ color: color, fontWeight: "500" }}
               >
                 {type.type.name}
@@ -169,7 +161,7 @@ function Pokemon(props) {
         </ul>
       </div>
 
-      <div className="Pokemon-stats">
+      <div className={classes.PokemonStats}>
         <table cellSpacing="15px">
           <tbody>
             {pokemon.stats.map((stat) => (
@@ -191,7 +183,7 @@ function Pokemon(props) {
         </table>
       </div>
       {showMore ? (
-        <div className="Pokemon-more-info">
+        <div className={classes.PokemonMoreInfo}>
           <Button
             variant="contained"
             color="primary"
