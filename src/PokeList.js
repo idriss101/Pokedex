@@ -16,7 +16,7 @@ function PokeList(props) {
         dataLength={props.pokemons.length}
         next={props.typeQuery ? props.getNewTypePokemon : props.getMorePokemon}
         hasMore={true}
-        loader={<h4>Loading...</h4>}
+        loader={<div className="o-pokeball c-loader u-bounce"></div>}
         endMessage={
           <p style={{ textAlign: "center" }}>
             <b>Yay! You have seen it all</b>

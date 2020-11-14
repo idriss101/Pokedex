@@ -20,9 +20,18 @@ const drawerWidth = 240;
 const styles = () => ({
   btns: {
     width: "100%",
+    borderRadius: "5px",
+    paddingTop: "5px",
+    paddingBottom: "5px",
+    border: "none",
+    backgroundColor: "#EEEEEE",
   },
   appBar: {
     backgroundColor: "#CC0000",
+  },
+  btnText: {
+    fontSize: "14px",
+    fontWeight: "600",
   },
 });
 
@@ -37,6 +46,15 @@ function Sidebar(props) {
     };
     getData();
   }, []);
+
+  const showAll = async () => {
+    const firstRes = await axios.get(
+      `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10`
+    );
+    props.setPokemons(firstRes.data.results);
+    props.setPageIndex(0);
+    setOpen(false);
+  };
 
   const handleOpen = () => {
     setOpen(true);
@@ -72,6 +90,17 @@ function Sidebar(props) {
         </IconButton>
         <Divider />
         <List>
+          <ListItem>
+            <Button
+              variant="outlined"
+              className={props.classes.btns}
+              onClick={showAll}
+            >
+              <ListItemText classes={{ primary: props.classes.btnText }}>
+                All
+              </ListItemText>
+            </Button>
+          </ListItem>
           {pokemonTypes.map((type) => (
             <ListItem key={type.name}>
               <Button
@@ -79,7 +108,9 @@ function Sidebar(props) {
                 className={props.classes.btns}
                 onClick={handleClick}
               >
-                <ListItemText>{type.name}</ListItemText>
+                <ListItemText classes={{ primary: props.classes.btnText }}>
+                  {type.name}
+                </ListItemText>
               </Button>
             </ListItem>
           ))}

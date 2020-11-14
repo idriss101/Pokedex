@@ -132,11 +132,7 @@ function Pokemon(props) {
   // console.log(pokemon);
 
   if (loading) {
-    return (
-      <div>
-        <h1>Loading</h1>
-      </div>
-    );
+    return <div className="o-pokeball c-loader u-bounce"></div>;
   }
   return (
     <div className="Pokemon">
