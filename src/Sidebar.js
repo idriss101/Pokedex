@@ -14,6 +14,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
+import SideBarBtn from "./SideBarBtn";
 
 const drawerWidth = 240;
 
@@ -68,6 +69,7 @@ function Sidebar(props) {
     props.getNewPokemon(e.target.textContent);
     setOpen(false);
   };
+
   return (
     <div className="SideBar">
       <AppBar
@@ -96,22 +98,25 @@ function Sidebar(props) {
               className={props.classes.btns}
               onClick={showAll}
             >
-              <ListItemText classes={{ primary: props.classes.btnText }}>
+              <p
+                style={{
+                  padding: "0",
+                  margin: "0",
+                  fontWeight: "700",
+                  color: "#A39F99",
+                }}
+              >
                 All
-              </ListItemText>
+              </p>
             </Button>
           </ListItem>
           {pokemonTypes.map((type) => (
             <ListItem key={type.name}>
-              <Button
-                variant="outlined"
-                className={props.classes.btns}
-                onClick={handleClick}
-              >
-                <ListItemText classes={{ primary: props.classes.btnText }}>
-                  {type.name}
-                </ListItemText>
-              </Button>
+              <SideBarBtn
+                handleClick={handleClick}
+                color={props.typeColors(type.name)}
+                name={type.name}
+              />
             </ListItem>
           ))}
         </List>
