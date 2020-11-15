@@ -1,3 +1,5 @@
+import sizes from "./sizes";
+
 const styles = () => ({
   progress: {
     height: "9px",
@@ -47,6 +49,9 @@ const styles = () => ({
     },
     "& img": {
       zIndex: "10",
+    },
+    [sizes.up("sm")]: {
+      width: "50%",
     },
   },
   PokemonMainTypes: {
