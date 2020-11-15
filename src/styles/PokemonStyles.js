@@ -9,18 +9,13 @@ const styles = () => ({
   Pokemon: {
     width: "100%",
     backgroundColor: "#f8f7f7",
-    padding: "40px 0",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
     "&:nth-child(2n + 0)": {
       backgroundColor: "white",
     },
   },
   PokemonMain: {
     backgroundColor: "white",
-    width: "70%",
+    width: "300px",
     borderRadius: "20px",
     padding: "10px",
     textAlign: "center",
@@ -51,7 +46,11 @@ const styles = () => ({
       zIndex: "10",
     },
     [sizes.up("sm")]: {
-      width: "50%",
+      // width: "50%",
+    },
+    [sizes.up("md")]: {
+      marginRight: "40px",
+      width: "400px",
     },
   },
   PokemonMainTypes: {
@@ -63,9 +62,15 @@ const styles = () => ({
   },
   PokemonStats: {
     marginTop: "20px",
-    width: "80%",
+    width: "350px",
     "& td": {
       textTransform: "capitalize",
+    },
+    [sizes.up("sm")]: {
+      width: "450px",
+    },
+    [sizes.up("md")]: {
+      marginRight: "40px",
     },
   },
   PokemonId: {
@@ -83,6 +88,9 @@ const styles = () => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    [sizes.up("md")]: {
+      flexDirection: "row",
+    },
   },
   PokemonExtraStats: {
     height: "40px",
@@ -108,6 +116,22 @@ const styles = () => ({
   PokemonWeight: {
     top: "-5%",
     right: " -5%",
+  },
+  Wrap: {
+    width: "100%",
+    // backgroundColor: "#f8f7f7",
+    padding: "40px 0",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+
+    [sizes.up("md")]: {
+      flexDirection: "row",
+      justifyContent: "flex-start",
+      marginLeft: "40px",
+      // width: "60%",
+    },
   },
 });
 

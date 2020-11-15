@@ -66,7 +66,7 @@ function MoreInfo(props) {
         <h3>Moves list</h3>
         <div className={classes.MoveWrap}>
           <ul>
-            {props.pokemon.moves.slice(0, 50).map((move) => (
+            {props.pokemon.moves.slice(0, 30).map((move) => (
               <li key={move.move.name}>
                 <div className={classes.Move}>{move.move.name}</div>
               </li>

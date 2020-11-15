@@ -5,13 +5,13 @@ import { withStyles } from "@material-ui/core/styles";
 import Pokemon from "./Pokemon";
 import "./PokeList.css";
 
-const styles = (theme) => ({
-  toolbar: theme.mixins.toolbar,
+const styles = () => ({
+  PokeList: {},
 });
 
 function PokeList(props) {
   return (
-    <div className="PokeList">
+    <div className={props.classes.PokeList}>
       <InfiniteScroll
         dataLength={props.pokemons.length}
         next={props.typeQuery ? props.getNewTypePokemon : props.getMorePokemon}

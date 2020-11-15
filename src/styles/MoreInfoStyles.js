@@ -1,3 +1,5 @@
+import sizes from "./sizes";
+
 const styles = () => ({
   MoreInfo: {
     display: "flex",
@@ -40,6 +42,9 @@ const styles = () => ({
     display: "flex",
     marginTop: "-20px",
     flexWrap: "wrap",
+    [sizes.up("md")]: {
+      maxWidth: "500px",
+    },
   },
   PokemonType: {
     textTransform: "uppercase",

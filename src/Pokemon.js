@@ -124,94 +124,101 @@ function Pokemon(props) {
   const { classes } = props;
   return (
     <div className={classes.Pokemon}>
-      <div className={classes.PokemonMain}>
-        <img src={pokemon.sprites.front_default} alt="" />
-        <div className={classes.PokemonId}>
-          <p>#{pokemon.id.pad()}</p>
-        </div>
-        <div
-          className={`${classes.PokemonExtraStats} ${classes.PokemonHeight} `}
-        >
-          <p>{insertDecimal(pokemon.height)}m</p>
-        </div>
-        <div
-          className={`${classes.PokemonExtraStats} ${classes.PokemonWeight} `}
-        >
-          <p>{insertDecimal(pokemon.weight)}kg</p>
-        </div>
-        <h2>{pokemon.name}</h2>
-        <ul className={classes.PokemonMainTypes}>
-          {pokemon.types.map((type) => {
-            const color = typeColors(type.type.name);
-            return (
-              <li
-                key={type.type.name}
-                className={classes.pokemonType}
-                style={{ color: color, fontWeight: "500" }}
-              >
-                {type.type.name}
-              </li>
-            );
-          })}
-        </ul>
-        <ul>
-          {pokemon.abilities.map((ability) => (
-            <li key={ability.name}>{ability.ability.name}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className={classes.PokemonStats}>
-        <table cellSpacing="15px">
-          <tbody>
-            {pokemon.stats.map((stat) => (
-              <>
-                <tr key={stat.stat.name}>
-                  <td>{stat.stat.name}</td>
-                  <td>{stat.base_stat}</td>
-                  <td style={{ width: "100%" }}>
-                    <ProgressBar
-                      value={normalise(stat.base_stat)}
-                      statColors={statColors}
-                      baseStat={stat.base_stat}
-                    />
-                  </td>
-                </tr>
-              </>
+      <div className={classes.Wrap}>
+        <div className={classes.PokemonMain}>
+          <img src={pokemon.sprites.front_default} alt="" />
+          <div className={classes.PokemonId}>
+            <p>#{pokemon.id.pad()}</p>
+          </div>
+          <div
+            className={`${classes.PokemonExtraStats} ${classes.PokemonHeight} `}
+          >
+            <p>{insertDecimal(pokemon.height)}m</p>
+          </div>
+          <div
+            className={`${classes.PokemonExtraStats} ${classes.PokemonWeight} `}
+          >
+            <p>{insertDecimal(pokemon.weight)}kg</p>
+          </div>
+          <h2>{pokemon.name}</h2>
+          <ul className={classes.PokemonMainTypes}>
+            {pokemon.types.map((type) => {
+              const color = typeColors(type.type.name);
+              return (
+                <li
+                  key={type.type.name}
+                  className={classes.pokemonType}
+                  style={{ color: color, fontWeight: "500" }}
+                >
+                  {type.type.name}
+                </li>
+              );
+            })}
+          </ul>
+          <ul>
+            {pokemon.abilities.map((ability) => (
+              <li key={ability.name}>{ability.ability.name}</li>
             ))}
-          </tbody>
-        </table>
-      </div>
-      {showMore ? (
-        <div className={classes.PokemonMoreInfo}>
+          </ul>
+        </div>
+
+        <div className={classes.PokemonStats}>
+          <table cellSpacing="15px">
+            <tbody>
+              {pokemon.stats.map((stat) => (
+                <>
+                  <tr key={stat.stat.name}>
+                    <td>{stat.stat.name}</td>
+                    <td>{stat.base_stat}</td>
+                    <td style={{ width: "100%" }}>
+                      <ProgressBar
+                        value={normalise(stat.base_stat)}
+                        statColors={statColors}
+                        baseStat={stat.base_stat}
+                      />
+                    </td>
+                  </tr>
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {showMore ? (
+          <>
+            <div className={classes.MoreInfoWrap}>
+              <div className={classes.PokemonMoreInfo}>
+                <div className={classes.MoreInfoBtn}></div>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={LessDetails}
+                  style={{
+                    backgroundColor: "#70C6C7",
+                    margin: "10px",
+                    fontWeight: "700",
+                  }}
+                >
+                  Less Details
+                </Button>
+                <MoreInfo pokemon={pokemon} />
+              </div>
+            </div>
+          </>
+        ) : (
           <Button
             variant="contained"
             color="primary"
-            onClick={LessDetails}
+            onClick={MoreDetails}
             style={{
               backgroundColor: "#70C6C7",
               margin: "10px",
               fontWeight: "700",
             }}
           >
-            Less Details
+            More Details
           </Button>
-          <MoreInfo pokemon={pokemon} />
-        </div>
-      ) : (
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={MoreDetails}
-          style={{
-            backgroundColor: "#70C6C7",
-            margin: "10px",
-            fontWeight: "700",
-          }}
-        >
-          More Details
-        </Button>
-      )}
+        )}
+      </div>
     </div>
   );
 }
