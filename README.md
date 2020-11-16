@@ -9,7 +9,6 @@ A one stop shop to look up information about your favorite pokemon!
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
-* [Contact](#contact)
 
 ## General info
 A solution to when you're playing a pokemon game and can't seem to remember information about a certain pokemon.  
@@ -41,7 +40,7 @@ To-do list:
 * Add search feauture
 
 ## Status
-Project is: _finished
+Project is: Finished
 
 ## Inspiration
 Project Design has been inspired by: https://selleo.github.io/healthdex/
