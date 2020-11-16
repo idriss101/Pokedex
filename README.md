@@ -18,32 +18,31 @@ A solution to when you're playing a pokemon game and can't seem to remember info
 [![screenshot.png](https://i.postimg.cc/wT9dk888/screenshot.png)](https://postimg.cc/CdrtF2xm)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* ReactJs
+* MaterialUi
+* Axios
+* InfiniteScroll
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
+```
+$ cd ../pokedex
+$ npm install
+$ npm start
+```
 
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Look up pokemon based on their type
+* View pokemon stats in a visually pleasing UI
+* See various attacks from each pokemon 
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Add Evolutions section to each pokemon 
+* Add search feauture
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project is: _finished
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+Project Design has been inspired by: https://selleo.github.io/healthdex/
 
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
