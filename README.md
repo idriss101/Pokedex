@@ -15,7 +15,7 @@ A one stop shop to look up information about your favorite pokemon!
 A solution to when you're playing a pokemon game and can't seem to remember information about a certain pokemon.  
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+[![screenshot.png](https://i.postimg.cc/wT9dk888/screenshot.png)](https://postimg.cc/CdrtF2xm)
 
 ## Technologies
 * Tech 1 - version 1.0
