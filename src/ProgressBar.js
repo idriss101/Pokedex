@@ -1,28 +1,19 @@
 import React from "react";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { withStyles } from "@material-ui/core/styles";
-
-const styles = () => ({
-  progress: {
-    height: "9px",
-    borderRadius: "10px",
-    backgroundColor: "#E9E8E7",
-  },
-  barColorPrimary: {
-    backgroundColor: (props) => props.statColors(props.baseStat),
-  },
-});
+import styles from "./styles/ProgressBarStyles";
 
 function ProgressBar(props) {
+  const { value, classes } = props;
   return (
     <div>
       <LinearProgress
-        value={props.value}
+        value={value}
         variant="determinate"
-        className={props.classes.progress}
+        className={classes.progress}
         classes={{
-          colorPrimary: props.classes.colorPrimary,
-          barColorPrimary: props.classes.barColorPrimary,
+          colorPrimary: classes.colorPrimary,
+          barColorPrimary: classes.barColorPrimary,
         }}
       />
     </div>

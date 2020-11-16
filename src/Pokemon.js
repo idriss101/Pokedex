@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import LinearProgress from "@material-ui/core/LinearProgress";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import "./Pokemon.css";
+import "./styles/Pokemon.css";
 import ProgressBar from "./ProgressBar";
 import MoreInfo from "./MoreInfo";
 import styles from "./styles/PokemonStyles";

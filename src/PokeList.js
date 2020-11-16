@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { withStyles } from "@material-ui/core/styles";
 import Pokemon from "./Pokemon";
-import "./PokeList.css";
 
 const styles = () => ({
   PokeList: {},
 });
 
 function PokeList(props) {
+  const {
+    classes,
+    pokemons,
+    typeQuery,
+    getNewTypePokemon,
+    getMorePokemon,
+  } = props;
   return (
-    <div className={props.classes.PokeList}>
+    <div className={classes.PokeList}>
       <InfiniteScroll
-        dataLength={props.pokemons.length}
-        next={props.typeQuery ? props.getNewTypePokemon : props.getMorePokemon}
+        dataLength={pokemons.length}
+        next={typeQuery ? getNewTypePokemon : getMorePokemon}
         hasMore={true}
         loader={<div className="o-pokeball c-loader u-bounce"></div>}
         endMessage={
@@ -23,7 +28,7 @@ function PokeList(props) {
           </p>
         }
       >
-        {props.pokemons.map((pokemon) => (
+        {pokemons.map((pokemon) => (
           <Pokemon {...pokemon} key={pokemon.name} />
         ))}
       </InfiniteScroll>

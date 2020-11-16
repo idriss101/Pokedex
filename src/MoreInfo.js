@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./MoreInfo.css";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles/MoreInfoStyles";
 
@@ -38,6 +37,8 @@ function MoreInfo(props) {
   const { classes } = props;
   return (
     <div className={classes.MoreInfo}>
+      {/* CODE BELOW IS FOR FEATURE TO BE IMPLEMENTED LATER -- EVOLUTIONS SECTION */}
+
       {/* <div className="evolution">
         <div className="evolution-pokemon">
           <img src={props.pokemon.sprites.front_default} alt=" " />
