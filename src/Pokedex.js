@@ -140,7 +140,7 @@ export default function Pokedex() {
     console.log(pokemons);
   };
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <SideBar
         getNewPokemon={getNewPokemon}
         setPokemons={setPokemons}

@@ -66,23 +66,24 @@ function Sidebar(props) {
   };
 
   return (
-    <div className="SideBar">
-      <HideOnScroll {...props}>
-        <AppBar
-          position="sticky"
-          color="secondary"
-          className={props.classes.appBar}
-        >
-          <Toolbar>
-            <IconButton onClick={handleOpen} color="inherit">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h4" noWrap>
-              Pokedex
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
+    <div
+      className="SideBar"
+      style={{ position: "sticky", top: "0px", right: "0px", zIndex: "99" }}
+    >
+      <AppBar
+        position="sticky"
+        color="secondary"
+        className={props.classes.appBar}
+      >
+        <Toolbar>
+          <IconButton onClick={handleOpen} color="inherit">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h4" noWrap>
+            Pokedex
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
       <Drawer variant="persistent" anchor="left" open={open} width={"50%"}>
         <IconButton onClick={handleClose}>
